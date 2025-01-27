@@ -1,0 +1,2 @@
+# Random UI/UX Designs for fun
+would be developing random designs i find on the internet using frontend technologies like `html`, `css`, `Javascript`, `react` and some popular libraries, `tailwindcss`, `swiperJS`
