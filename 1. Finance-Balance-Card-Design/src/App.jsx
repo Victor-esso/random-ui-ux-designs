@@ -1,5 +1,6 @@
 import Assets from "./components/Assets"
 import FinanceCard from "./components/FinanceCard"
+import Footer from "./components/Footer"
 import HotLinks from "./components/HotLinks"
 import Phone from "./components/phone"
 import { Icon } from "@iconify/react/dist/iconify.js"
@@ -12,9 +13,11 @@ function App() {
       <Phone> 
         <div className="horizontal justify-between px-6">
           <div className="user-block">
-            <div className="photo"></div>
+            <div className="photo overflow-hidden">
+              <img src="./assets/images/me.jpg" alt="" className="w-full h-full object-cover" />
+            </div>
             <div className="details">
-              <p className="">Hi, Lukmon Olabode</p>
+              <p className="">Hi, Victor Esso</p>
               <span className="">Have a great day!</span>
             </div>
           </div>
@@ -27,6 +30,7 @@ function App() {
         <FinanceCard />
         <HotLinks />
         <Assets />
+        <Footer />
 
       </Phone>
     </section>

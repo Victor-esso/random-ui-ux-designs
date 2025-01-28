@@ -12,7 +12,7 @@ const FinanceCard = () => {
                         <span className="text-[.85rem] font-[200] tracking-wide opacity-45">+2.50% form last month</span>
                     </div>
                     <div className="animate-pulse">
-                        <Icon icon="ant-design:thunderbolt-filled" width="32" height="32" className="animate-breath" />
+                        <Icon icon="ant-design:thunderbolt-filled" width="40" height="40" className="animate-breath" />
                     </div>
                 </div>
             </div>
