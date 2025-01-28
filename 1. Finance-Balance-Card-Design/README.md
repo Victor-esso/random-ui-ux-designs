@@ -10,6 +10,11 @@ This project is a recreation of an eye-catching design by [@Boardmaths(twitter-x
 - **TailwindCSS**: For utility-first styling and responsiveness.
 - **SwiperJS**: For smooth and responsive carousels/sliders.
 - **SCSS**: For modular and maintainable styling.
+- **Iconify**: For Icon sets.
+
+## Assets
+- Icon : Huge Icon and Solar Icon set
+- Font : Poppins and Manrope
 
 ## 📸 Preview
 
@@ -18,7 +23,6 @@ This project is a recreation of an eye-catching design by [@Boardmaths(twitter-x
 
 ![video-preview](https://crypto-finance-app-ui.netlify.app/assets/video/preview.gif)
 
-***
 Check out the [Live Demo](https://crypto-finance-app-ui.netlify.app/) to see the project in action!
 
 ## 🐦 Connect with Me
