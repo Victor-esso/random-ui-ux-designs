@@ -182,7 +182,7 @@ body {
   }
   footer .nav-link.main > button {
     @apply bg-black aspect-square w-[60px] rounded-full absolute abs-center-x -top-[30px] grid-center text-3xl text-white shadow-[#5962FF]/[.4] shadow-lg hover:scale-[1.1] transition-all active:scale-[.9] hover:shadow-xl hover:shadow-[#5962FF]/[.3];
-    transition-delay: 0.14s;
+    transition-delay: 0s;
     transition-duration: 0.3s;
   }
   footer.hide-nav {
