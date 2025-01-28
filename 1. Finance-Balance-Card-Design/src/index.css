@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .spirit {
+    @apply bg-neutral-300 animate-pulse;
+    color: transparent !important;
+  }
+  .spirit * {
+    opacity: 0;
+  }
+  .spirit-15 {
+    @apply bg-neutral-300 animate-pulse;
+    color: transparent !important;
+    animation-delay: 0.15s;
+  }
+  .spirit-15 * {
+    opacity: 0;
+  }
+  .spirit-25 {
+    @apply bg-neutral-300 animate-pulse;
+    color: transparent !important;
+    animation-delay: 0.25s;
+  }
+  .spirit-25 * {
+    opacity: 0;
+  }
+  .spirit-35 {
+    @apply bg-neutral-300 animate-pulse;
+    color: transparent !important;
+    animation-delay: 0.25s;
+  }
+  .spirit-35 * {
+    opacity: 0;
+  }
+  .swiper-wrapper {
+    width: -moz-max-content !important;
+    width: max-content !important;
+  }
+}
+body {
+  background-color: #EEEEEE;
+}
+
+:root {
+  --primaryText: #171717;
+  --textGrey: #969696;
+}
+
+@layer components {
+  .phone {
+    @apply sm:aspect-[430/932] bg-white sm:w-[415px] max-sm:w-full max-sm:h-100dvh sm:rounded-3xl sm:shadow-sm vertical *:w-full overflow-hidden font-poppins;
+  }
+  .phone > .notification-bar {
+    @apply h-[45px] horizontal justify-between px-6 max-sm:opacity-0;
+  }
+  .phone > .notification-bar > .time {
+    @apply font-medium text-[.8rem];
+  }
+  .phone > .notification-bar > .status-icons {
+    @apply horizontal gap-[4px];
+  }
+  .user-block {
+    @apply horizontal items-center gap-2;
+  }
+  .user-block > .photo {
+    @apply bg-neutral-300 animate-pulse aspect-square w-[40px] rounded-full;
+  }
+  .user-block > .details > p {
+    @apply font-semibold text-[.92rem] -mb-2;
+    color: #171717;
+  }
+  .user-block > .details > span {
+    @apply font-light text-[.75rem] inline-block;
+    color: #3d3d3d;
+  }
+  .hamburger-btn {
+    @apply aspect-square w-[40px] rounded-full bg-[#FAFAFA] hover:bg-[#f0f0f0] grid-center text-neutral-800/75;
+  }
+  .finance-card {
+    @apply p-6;
+  }
+  .finance-card > .card {
+    @apply w-full aspect-[687/350] vertical text-white;
+  }
+  .finance-card > .card > div:first-child {
+    @apply bg-[var(--primaryText)] w-full h-[67%] rounded-t-2xl rounded-br-2xl shrink-0;
+  }
+  .finance-card > .card > div:nth-child(2) {
+    @apply w-full h-[33%] horizontal grow-0;
+  }
+  .finance-card > .card > div:nth-child(2) > div:first-child {
+    @apply bg-transparent w-full h-full;
+  }
+  .finance-card > .card > div:nth-child(2) > div:first-child > div {
+    @apply bg-[var(--primaryText)] w-full h-full rounded-b-2xl;
+  }
+  .finance-card > .card > div:nth-child(2) > div:nth-child(2) {
+    @apply bg-[var(--primaryText)] w-max h-full;
+  }
+  .finance-card > .card > div:nth-child(2) > div:nth-child(2) > div {
+    @apply bg-white w-max h-full rounded-tl-2xl p-2 pb-0 pr-0;
+  }
+  .finance-card > .card > div:nth-child(2) > div:nth-child(2) > div > button {
+    @apply bg-[#5962FF] hover:bg-[#4f56e9] text-white w-full h-full rounded-xl font-medium text-[.8rem] px-6  horizontal overflow-hidden relative;
+    transition: 0.2s ease-in-out;
+  }
+  .finance-card > .card > div:nth-child(2) > div:nth-child(2) > div > button .icon {
+    @apply absolute -left-6 opacity-0;
+    filter: blur(4px);
+    transition: 0.2s ease-in-out;
+  }
+  .finance-card > .card > div:nth-child(2) > div:nth-child(2) > div > button:hover {
+    @apply pl-[2.6rem];
+  }
+  .finance-card > .card > div:nth-child(2) > div:nth-child(2) > div > button:hover .icon {
+    @apply absolute left-4 opacity-100;
+    filter: blur(0px);
+  }
+  .hot-links {
+    @apply px-6;
+  }
+  .hot-links .swiper-slide {
+    @apply w-max h-max;
+  }
+  .hot-links .swiper-slide > * {
+    @apply text-[.75rem] font-medium px-6 py-2 border border-solid border-neutral-300/[.7] text-neutral-700/[.94] rounded-full cursor-pointer transition-all;
+  }
+  .hot-links .swiper-slide > *.active {
+    @apply bg-[#3C4043] border-[#3C4043] text-white;
+  }
+  .single-asset {
+    @apply horizontal  justify-between w-full py-3 border-0 border-b border-solid border-neutral-200/[.7];
+  }
+  .single-asset > .left {
+    @apply horizontal items-center gap-2;
+  }
+  .single-asset > .right {
+    @apply vertical items-end;
+  }
+  .single-asset .asset-name {
+    @apply capitalize font-semibold text-[var(--primaryText)] text-[.9rem];
+  }
+  .single-asset .sub-info {
+    @apply text-[.75rem];
+  }
+}

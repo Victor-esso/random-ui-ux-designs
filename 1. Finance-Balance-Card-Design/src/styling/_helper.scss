@@ -1,0 +1,41 @@
+@layer components {
+    .spirit{
+        @apply bg-neutral-300 animate-pulse;
+        color: transparent !important;
+        *{
+            opacity: 0;
+        }
+    }
+
+    .spirit-15{
+        @apply bg-neutral-300 animate-pulse;
+        color: transparent !important;
+        *{
+            opacity: 0;
+        }
+        animation-delay: .15s;
+    }
+    
+    .spirit-25{
+        @apply bg-neutral-300 animate-pulse;
+        color: transparent !important;
+        *{
+            opacity: 0;
+        }
+        animation-delay: .25s;
+    }
+
+    .spirit-35{
+        @apply bg-neutral-300 animate-pulse;
+        color: transparent !important;
+        *{
+            opacity: 0;
+        }
+        animation-delay: .25s;
+    }
+
+    .swiper-wrapper{
+        width: max-content !important;
+    }
+
+}
