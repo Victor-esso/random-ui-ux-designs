@@ -52,7 +52,7 @@ body {
     @apply sm:aspect-[430/932] bg-white sm:w-[415px] max-sm:w-full max-sm:h-100dvh sm:rounded-3xl sm:shadow-sm vertical *:w-full overflow-hidden font-poppins;
   }
   .phone > .notification-bar {
-    @apply h-[45px] horizontal justify-between px-6 max-sm:opacity-0 max-sm:h-[10px];
+    @apply h-[45px] horizontal justify-between px-6 max-sm:opacity-0 max-sm:h-[20px];
   }
   .phone > .notification-bar > .time {
     @apply font-medium text-[.8rem];
