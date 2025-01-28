@@ -20,7 +20,7 @@ function App() {
               <img src="./assets/images/me.jpg" alt="" className="w-full h-full object-cover" />
             </div>
             <div className="details">
-              <p className="">Hi, Victor Esso</p>
+              <p className="">Hi, Victor Esso-Nmakwe</p>
               <span className="">Have a great day!</span>
             </div>
           </div>
