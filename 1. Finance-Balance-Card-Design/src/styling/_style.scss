@@ -185,11 +185,11 @@ $textGrey : #3d3d3d;
         }
 
         &.hide-nav{
-            @apply left-0 -bottom-[80px] blur-sm ;
+            @apply left-0 -bottom-[80px] opacity-30 ;
 
             .nav-link.main{
                 >button{
-                    @apply abs-center-y scale-[.6] blur-sm;
+                    @apply abs-center-y scale-[.6] opacity-40;
                     transition-delay: 0s;
                 }
             }
