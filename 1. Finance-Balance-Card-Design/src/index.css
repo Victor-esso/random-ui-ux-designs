@@ -49,7 +49,7 @@ body {
 
 @layer components {
   .phone {
-    @apply sm:aspect-[430/932] bg-white sm:w-[415px] max-sm:w-full max-sm:h-100dvh sm:rounded-3xl sm:shadow-sm vertical *:w-full overflow-hidden font-poppins no-select;
+    @apply sm:aspect-[430/932] bg-white sm:w-[415px] max-sm:w-full max-sm:h-100dvh sm:rounded-3xl sm:shadow-sm vertical *:w-full overflow-hidden font-poppins no-select relative;
   }
   .phone > .notification-bar {
     @apply h-[45px] horizontal justify-between px-6 max-sm:opacity-0 max-sm:h-[20px];
@@ -145,7 +145,8 @@ body {
     @apply text-[.75rem];
   }
   footer {
-    @apply w-full h-[80px] pb-5 shrink-0 bg-white px-8 horizontal justify-between relative;
+    @apply w-full h-[80px] absolute bottom-0 left-0 pb-5 shrink-0 bg-white px-8 horizontal justify-between transition-all;
+    transition-duration: 0.3s;
   }
   footer .nav-link {
     @apply relative vertical items-center gap-1;
@@ -181,5 +182,14 @@ body {
   }
   footer .nav-link.main > button {
     @apply bg-black aspect-square w-[60px] rounded-full absolute abs-center-x -top-[30px] grid-center text-3xl text-white shadow-[#5962FF]/[.4] shadow-lg hover:scale-[1.1] transition-all active:scale-[.9] hover:shadow-xl hover:shadow-[#5962FF]/[.3];
+    transition-delay: 0.14s;
+    transition-duration: 0.3s;
+  }
+  footer.hide-nav {
+    @apply left-0 -bottom-[80px] blur-sm;
+  }
+  footer.hide-nav .nav-link.main > button {
+    @apply abs-center-y scale-[.6] blur-sm;
+    transition-delay: 0s;
   }
 }

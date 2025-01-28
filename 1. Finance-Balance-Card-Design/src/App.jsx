@@ -1,3 +1,4 @@
+import { useState } from "react"
 import Assets from "./components/Assets"
 import FinanceCard from "./components/FinanceCard"
 import Footer from "./components/Footer"
@@ -6,6 +7,8 @@ import Phone from "./components/phone"
 import { Icon } from "@iconify/react/dist/iconify.js"
 
 function App() {
+
+    const [scrollDirection, setScrollDirection] = useState(null);
   
   return (
     
@@ -29,8 +32,8 @@ function App() {
 
         <FinanceCard />
         <HotLinks />
-        <Assets />
-        <Footer />
+        <Assets setScrollDirection={setScrollDirection} scrollDirection={scrollDirection} />
+        <Footer scrollDirection={scrollDirection} />
 
       </Phone>
     </section>

@@ -1,8 +1,20 @@
 
 import { Icon } from "@iconify/react/dist/iconify.js"
-const Footer = () => {
+import { useEffect, useState } from "react"
+const Footer = ({ scrollDirection }) => {
+
+    const [hideNav , setHideNav] = useState(false)
+
+    useEffect(()=>{
+        if(scrollDirection ==='down'){
+            setTimeout(() => setHideNav(true) ,300)
+        }else{
+            setHideNav(false)
+        }
+    },[scrollDirection])
+
   return (
-    <footer>
+    <footer className={`${hideNav ? 'hide-nav' : ''}`}>
         <button className="nav-link active">
             <div className="stack icon">
                 <Icon icon="solar:home-2-linear" />
