@@ -159,7 +159,56 @@ const initialSongs = [
         name : "Jolenes",
         by : "Dolly Parton"
     },
-
+    {
+        id : "8lMT3E0TSME",
+        name : "Cheri Cheri Lady",
+        by : "Modern Talking"
+    },
+    {
+        id : "4uaYKf5Yd_k",
+        name : "UNTIL I FOUND YOU",
+        by : "Stephen Sanchez & Em Beihold"
+    },
+    {
+        id : "wv-4gj7F7Tk",
+        name : "TOBECHUKWU",
+        by : "NATHANIEL BASSEY"
+    },
+    {
+        id : "zOD99FOQEto",
+        name : "GOODNESS OF GOD",
+        by : "CeCe WinansY"
+    },
+    {
+        id : "oQsodhHJ5kg",
+        name : "Firm Foundation",
+        by : "Cody Carnes"
+    },
+    {
+        id : "yOmWr1OBVW0",
+        name : " God, Turn it Around",
+        by : "John Reddick"
+    },
+    {
+        id : "NRMYKGHNCjg",
+        name : "Umbrella",
+        by : "Rihanna"
+    },
+    {
+        id : "8QPZPrJaFG0",
+        name : "Stay",
+        by : "Rihanna"
+    },
+    {
+        id : "_KQ5MtWYeHU",
+        name : "Man Down",
+        by : "Rihanna"
+    },
+    {
+        id : "8A_1q4xiWiI",
+        name : " Roar",
+        by : "Katy Perry"
+    },
 ]
 
 export default initialSongs;
