@@ -63,6 +63,7 @@ function App() {
       let updatedPlayedSongs = playedSongs.filter((id) => id !== reset.value)
       setPlayedSongs(updatedPlayedSongs);
       localStorage.setItem("playedSongs", JSON.stringify(updatedPlayedSongs));
+      setReset({text:"All" , value: "*"})
     }
   };
 

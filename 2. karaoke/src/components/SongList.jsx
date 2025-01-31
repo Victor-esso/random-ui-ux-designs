@@ -9,7 +9,7 @@ const SongList = ({showTitle = true ,  setShowTitle , songs , initialSongs , pla
             value: song.id,
             text : `Number ${i + 1}`
         }
-    })
+    }).filter((song , id) => playedSongs.includes(song.value))
     
     options = [{value:"*" , text: "All"}, ...options]
 
