@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .num-btn {
+    aspect-ratio: 1/1;
+    position: relative;
+  }
+  .num-btn > span {
+    color: #ffffff; /* Hot pink */
+    text-shadow: 0 0 5px rgba(255, 105, 180, 0.8078431373), 0 0 15px rgba(255, 105, 180, 0.631372549), 0 0 30px rgba(255, 105, 180, 0.3215686275), 0 0 60px rgba(245, 160, 203, 0.4196078431);
+    @apply rounded-2xl font-bangers text-[6.5rem];
+  }
+  .num-btn:hover > span {
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.8078431373), 0 0 25px rgba(255, 105, 180, 0.631372549), 0 0 40px rgba(255, 105, 180, 0.3215686275), 0 0 80px rgba(245, 160, 203, 0.4196078431);
+  }
+  .num-btn.disabled > span {
+    @apply hover:bg-transparent cursor-not-allowed text-white/[.05];
+    text-shadow: none;
+  }
+  .num-btn:not(.disabled) > span {
+    @apply active:scale-[.9] transition-all;
+  }
+  .num-btn:not(.disabled):hover > span {
+    transform: scale(1.8);
+    display: inline-block;
+  }
+  .num-container {
+    @apply w-full h-100dvh no-scrollbar overflow-y-scroll grid grid-cols-6   gap-0 auto-rows-max p-6;
+  }
+  .num-container:has(.num-btn:not(.disabled):hover) .num-btn:not(:hover) > span {
+    opacity: 0.5 !important;
+  }
+  .num-container:has(.num-btn:not(.disabled):hover) .num-btn:not(:hover) .song-info {
+    opacity: 0.8;
+  }
+  .num-container:has(.num-btn:not(.disabled):hover) .num-btn:hover {
+    z-index: 100;
+  }
+  .num-container:not(.show-titles) .num-btn .song-info {
+    display: none;
+  }
+  .num-container.show-titles {
+    all: unset;
+    @apply w-full h-100dvh no-scrollbar overflow-y-scroll vertical p-6 pl-24;
+  }
+  .num-container.show-titles .num-btn {
+    aspect-ratio: unset;
+  }
+  .num-container.show-titles .num-btn > span {
+    display: none;
+  }
+  .song-info {
+    @apply horizontal transition-all rounded-xl px-4 hover:bg-white/[.05] w-full h-max justify-between py-4 hover:scale-[1.1] hover:px-10;
+  }
+  .song-info > span:first-child {
+    @apply capitalize font-normal text-2xl;
+  }
+  .song-info > span:last-child {
+    @apply opacity-40;
+  }
+  * {
+    @apply font-poppins;
+  }
+}
+.youtube-container {
+  position: fixed;
+  height: 100dvh;
+  overflow: hidden;
+  max-width: 100%;
+  background: black;
+}
+
+.youtube-container iframe {
+  width: 100%;
+  height: 100%;
+}

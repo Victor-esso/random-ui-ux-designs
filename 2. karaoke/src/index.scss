@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+    .num-btn{
+          aspect-ratio: 1/1;
+          position: relative;
+      
+          >span{
+            color: #ffffff; /* Hot pink */
+            text-shadow: 0 0 5px #ff69b4ce ,0 0 15px #ff69b4a1 ,  0 0 30px #ff69b452 ,  0 0 60px #f5a0cb6b;
+            @apply  rounded-2xl font-bangers text-[6.5rem] ;
+
+          }
+         &:hover{
+          >span{
+            text-shadow: 0 0 10px #ff69b4ce ,0 0 25px #ff69b4a1 ,  0 0 40px #ff69b452 ,  0 0 80px #f5a0cb6b;
+          }
+         }
+         &.disabled{
+          >span{
+            @apply hover:bg-transparent cursor-not-allowed text-white/[.05];
+            text-shadow: none;
+          }
+         }
+         &:not(.disabled){
+
+            >span{
+              @apply active:scale-[.9] transition-all;
+            }
+            &:hover{
+              >span{
+                transform: scale(1.8);
+                display: inline-block;
+              }
+            }
+         }
+
+       
+
+        &:not(.disabled):hover{
+          // .song-info{
+          //   @apply scale-[1.7] bg-black rounded-2xl px-3 py-2 -bottom-8 z-30;
+            
+          // }
+        }
+
+       
+
+    }
+
+    .num-container{
+      @apply w-full h-100dvh no-scrollbar overflow-y-scroll grid grid-cols-6   gap-0 auto-rows-max p-6;
+      // &:hover{
+      //   .num-btn:not(:hover){
+      //     opacity: .5 !important;
+      //   }
+      // }
+
+      &:has( .num-btn:not(.disabled):hover){
+        .num-btn:not(:hover){
+          >span{opacity: .5 !important;}
+          .song-info{
+            opacity: .8;
+          }
+        }
+        .num-btn:hover{
+          z-index: 100;
+        }
+      }
+
+      &:not(.show-titles){
+        .num-btn .song-info{
+          display: none;
+        }
+      }
+
+      &.show-titles{
+        all: unset;
+        @apply w-full h-100dvh no-scrollbar overflow-y-scroll vertical p-6 pl-24;
+        .num-btn{
+          aspect-ratio: unset;
+          >span{
+            display: none;
+          }
+        }
+      }
+
+    }
+
+    .song-info{
+      @apply horizontal transition-all rounded-xl px-4 hover:bg-white/[.05] w-full h-max justify-between py-4 hover:scale-[1.1] hover:px-10 ;
+      
+      >span{
+        &:first-child{
+          @apply capitalize font-normal text-2xl;
+        }
+        &:last-child{
+          @apply opacity-40;
+        }
+      }
+    }
+
+    *{
+      @apply font-poppins
+    }
+    
+
+}
+
+
+
+.youtube-container {
+  position: fixed;
+  height: 100dvh;
+  overflow: hidden;
+  max-width: 100%;
+  background: black;
+}
+
+.youtube-container iframe {
+  width: 100%;
+  height: 100%;
+}
