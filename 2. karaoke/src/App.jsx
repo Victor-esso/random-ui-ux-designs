@@ -12,7 +12,7 @@ function App() {
   const [song, setSong] = useState('');
   const [playedSongs, setPlayedSongs] = useState([]);
   const [search , setSearch] = useState('');
-  const [reset , setReset] = useState({text:"All" , value: "*"})
+  const [reset , setReset] = useState({text:"All Songs" , value: "*"})
   const [shuffledSongs, setShuffledSongs] = useState([]); // Array of shuffled unplayed songs
   const [screenLoading , setScreenLoading] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState( window.innerHeight == screen.height);
@@ -63,7 +63,21 @@ function App() {
       let updatedPlayedSongs = playedSongs.filter((id) => id !== reset.value)
       setPlayedSongs(updatedPlayedSongs);
       localStorage.setItem("playedSongs", JSON.stringify(updatedPlayedSongs));
-      setReset({text:"All" , value: "*"})
+      // check if more played songs exist 
+      if(updatedPlayedSongs.length){
+        let previousPlayed = updatedPlayedSongs[updatedPlayedSongs.length - 1];
+        let getSongPair = shuffledSongs.map((song , i) => {
+          return {
+            text: `Number ${i + 1}`,
+            value : song.id
+          }
+        }).find((song) => song.value === previousPlayed);
+
+        setReset(getSongPair)
+        // setReset({text:"All Songs" , value: "*"})
+      }else{
+        setReset({text:"All Songs" , value: "*"})
+      }
     }
   };
 
@@ -125,7 +139,7 @@ function App() {
       />
       {song && <YouTubePlayer videoId={song} setSong={setSong} />}
       {screenLoading && 
-         <div className="bg-black grid-center w-full h-100dvh fixed inset-0">
+         <div className="bg-black grid-center w-full h-100dvh fixed inset-0 z-50">
           <div className="relative">
                <img src={logo} alt="" className="h-[750px] animate-breath" />
                <div className="absolute w-max h-max bottom-0 abs-center-x ">

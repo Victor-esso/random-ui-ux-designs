@@ -47,7 +47,7 @@ const YouTubePlayer = ({ videoId , setSong}) => {
 
   return (
     <div>
-        <div className="youtube-container stack fixed inset-0">
+        <div className="youtube-container stack fixed inset-0 z-50">
             <YouTube videoId={videoId} opts={opts} onReady={onReady} onStateChange={onStateChange} onEnd={() => setSong(false)} />
             <div onClick={togglePlayPause} className={`${isPlaying ? 'bg-white/0' : 'bg-black/[.6]'} grid-center `}>
                 {(!isPlaying && !loading) && <Icon icon="solar:pause-bold" className="text-white text-[6rem] animate-breath" />}

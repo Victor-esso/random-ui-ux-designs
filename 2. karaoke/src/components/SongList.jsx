@@ -1,5 +1,6 @@
 
 import CustomDropdown from './CustomDropdown ';
+import Summary from './Summary';
 import logo from '/assets/images/logo.svg'
 import { Icon } from "@iconify/react";
 const SongList = ({showTitle = true ,  setShowTitle , songs , initialSongs , playedSongs , playSong , resetPlayedSongs , setSearch , search , reset , setReset , shuffleUnplayedSongs }) => {
@@ -11,44 +12,74 @@ const SongList = ({showTitle = true ,  setShowTitle , songs , initialSongs , pla
         }
     }).filter((song , id) => playedSongs.includes(song.value))
     
-    options = [{value:"*" , text: "All"}, ...options]
+    options = [{value:"*" , text:"All Songs"}, ...options]
 
 
 
 
   return (
-    <div className="w-full h-full min-h-[100dvh] bg-[#101010] horizontal items-stretch text-white">
-        <div className="w-[400px] bg-black/30 shrink-0 p-5 vertical justify-center">
+    <div className="w-full h-full min-h-[100dvh] overflow-hidden bg-[#101010] horizontal items-stretch text-white">
+        <div className="w-[400px] bg-black/30 shrink-0 p-5 vertical">
             <img src={logo} alt="" className='animate-breath' />
-            <div className='vertical w-full px-9'>
-                <div className='horizontal  w-full justify-between items-center'>
-                    <span className='text-sm opacity-40'>Show Songs Title</span>
-                    <span className='w-[60px] h-[1px] bg-white/[.1]'></span>
-                    <button onClick={() => setShowTitle(!showTitle)} className='text-2xl capitalize bg-white/[.01] hover:bg-white/[.06] active:scale-[1] hover:scale-[1.1] px-3 py-1 grid-center rounded-lg'>{showTitle ? 'on' : 'of'}</button>
+            <div className='vertical w-full gap-6 px-9'>
+                
+                <div className='horizontal *:h-[32px] *:aspect-square items-center border border-solid border-white/[.03] *:grid-center overflow-hidden rounded-lg hover:scale-[1.1] transition-all fixed top-4 left-4 z-[10]'>
+                    <button onClick={() => setShowTitle(false)} className={`${!showTitle ? 'bg-white/[.04]' : 'opacity-15'}`}><Icon icon="ic:round-numbers" width="24" height="24" /></button>
+                    <button onClick={() => setShowTitle(true)} className={`${showTitle ? 'bg-white/[.04]' : 'opacity-15'}`}><Icon icon="solar:plaaylist-minimalistic-linear" width="24" height="24" /></button>
                 </div>
-            </div>
-            {!showTitle && 
-                <>
-                    <div className='horizontal w-max fixed top-5 left-5 gap-2'>
-                        <button >Reset</button>
-                        <CustomDropdown 
-                            options={options}
-                            placeholder="Choose an option"
-                            onChange={(value) => setReset(value)}
-                            initSelected={reset}
-                            
-                        />
-                        <button onClick={() => resetPlayedSongs()} className='opacity-40 hover:opacity-100 hover:scale-[1.2] active:scale-[.9] transition-all '>
-                        <Icon icon="solar:square-arrow-right-bold" className='text-[2.5rem]' />
-                        </button>
+
+                {
+                    !showTitle ? 
+                    <div className='w-full vertical items-center gap-8'>
+                        <h1 className='mb-4 horizontal gap-3'>
+                            <span className='text-3xl font-bold shrink-0'>Random</span>
+                            <span className='shrink-0 capitalize opacity-45 font-light'>- mode</span>
+                        </h1>
+                        <div className='w-full vertical gap-2'>
+                            <Summary summary="Total Songs" value={initialSongs.length} />
+                            <Summary summary='Played songs' value={playedSongs.length} />
+                            <Summary summary='Available Songs' value={initialSongs.length - playedSongs.length } />
+                        </div>
+                        <div className='w-full vertical gap-6'>
+                            <span className='text-sm capitalize opacity-30 font-light'>settings</span>
+                            <div className='pl-2 w-full vertical gap-3'>
+                                <div className='horizontal w-max gap-5'>
+                                    <CustomDropdown 
+                                        options={options}
+                                        placeholder="Choose an option"
+                                        onChange={(value) => setReset(value)}
+                                        initSelected={reset}
+                                        
+                                    />
+                                    <button onClick={() => resetPlayedSongs()} className=' hover:scale-[1.1] active:scale-[.9] transition-all horizontal gap-1 items-center text-black bg-white h-[32px] px-3 pr-2 rounded-lg '>
+                                        <span className=''>Reset</span>
+                                        <Icon icon="solar:refresh-linear" className=' text-[1.6rem]' />
+                                    </button>
+                                </div>
+                                <button onClick={() => shuffleUnplayedSongs()} className=' horizontal items-center gap-2 hover:scale-[1.05] active:scale-[.9] transition-all bg-white/[.03] hover:bg-white/[.06] px-3 py-1 rounded-lg'>
+                                    <Icon icon="solar:shuffle-outline" width="24" height="24" />
+                                    <span>Shuffle</span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-        
-                    <button onClick={() => shuffleUnplayedSongs()} className='fixed bottom-5 left-5 horizontal items-center gap-2 hover:scale-[1.2] active:scale-[.9] transition-all bg-white/[.03] px-3 py-1 rounded-lg'>
-                        <Icon icon="solar:refresh-linear" width="24" height="24" />
-                        <span>Shuffle</span>
-                    </button>
-                </>
-            }
+                    :
+                    <div className='w-full vertical items-center gap-6'>
+                        <h1 className='mb-4 horizontal gap-3'>
+                            <span className='text-3xl font-bold shrink-0'>Playlist</span>
+                            <span className='shrink-0 capitalize opacity-45 font-light'>- mode</span>
+                        </h1>
+                        <div className='w-full vertical gap-2'>
+                            <Summary summary="Total Songs" value={initialSongs.length} />
+                            {
+                                (songs.length !== initialSongs.length) &&
+                                <Summary summary='Showing' value={songs.length} />
+                            }
+                        </div>
+                    </div>
+                }
+                
+            </div>
         </div>
         {showTitle ? 
             <div className='w-full h-100dvh no-scrollbar vertical items-center'>

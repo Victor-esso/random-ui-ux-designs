@@ -26,19 +26,19 @@ const CustomDropdown = ({ options, placeholder = "Select an option", onChange , 
   return (
     <div ref={dropdownRef} className="relative w-max">
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-max text-white bg-white/[.03] px-3 py-1 rounded-lg"
+        onClick={() => (options.length > 1 ? setIsOpen(!isOpen) : '')}
+        className="w-max text-white bg-white/[.07] px-3 py-1 rounded-lg border border-solid border-white/[0.04]"
       >
         {initSelected ? initSelected.text : placeholder}
       </button>
 
       {isOpen && (
-        <ul className="absolute w-max mt-1 bg-white/[.05] rounded-lg z-10 max-h-60 overflow-y-auto no-scrollbar">
+        <ul className="absolute w-full min-w-full max-w-max top-[100%] translate-y-[-100%] bg-[#171717] rounded-lg z-10 max-h-[140px] overflow-y-auto no-scrollbar">
           {options.map((option) => (
             <li
               key={option.value}
               onClick={() => handleSelect(option)}
-              className={`py-1 px-3 text-sm cursor-pointer  ${
+              className={`py-1 px-3 text-sm cursor-pointer w-full  min-w-max  ${
                 initSelected?.value === option.value ? "bg-white text-black" : "hover:bg-white/[.07] hover:text-white"
               }`}
             >
