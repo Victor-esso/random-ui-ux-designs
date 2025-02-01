@@ -224,6 +224,95 @@ const initialSongs = [
         name : "Not Afraid",
         by : "Eminem "
     },
+    {
+        id : "tOaZG_QxtVU",
+        name : "Jordin Sparks & Chris Brown",
+        by : "No Air"
+    },
+    {
+        id : "V7ojVgvSeBA",
+        name : "Coming Home",
+        by : "Diddy"
+    },
+    {
+        id : "4U8GylpOWsQ",
+        name : "Nothin' On You",
+        by : "B.O.B Feat. Bruno Mars"
+    },
+    {
+        id : "V7ojVgvSeBA",
+        name : " Airplanes",
+        by : "B.o.B"
+    },
+    {
+        id : "BHEa_sXr6Xw",
+        name : "BEST I EVER HAD",
+        by : "Drake"
+    },
+    {
+        id : "tBa1jNFIT40",
+        name : "What's My Name",
+        by : "Rihanna feat. Drake"
+    },
+    {
+        id : "w_nUEWy-wzI",
+        name : "Find Your Love",
+        by : "Drake"
+    },
+    {
+        id : "P_MivU41-R8",
+        name : "Mistletoe",
+        by : "Justin Bieber"
+    },{
+        id : "SoTregAKlqU",
+        name : "BIRDS OF A FEATHER",
+        by : "Billie Eilish"
+    },
+    {
+        id : "WwjhQ8FCIH8",
+        name : " Marry You",
+        by : "Bruno Mars"
+    },
+    {
+        id : "4n2cRx8uAbo",
+        name : " Forever",
+        by : "Gyakie & Omah Lay"
+    },
+    {
+        id : "k9GJLIf-vgY",
+        name : "Pretty Girl Rock",
+        by : "Keri Hilson"
+    },
+    {
+        id : "qsyRU7aZNYg",
+        name : "Sexy Love",
+        by : "NeYo"
+    },
+    {
+        id : "6spdd0r4kOs",
+        name : "So Sick",
+        by : " Ne -Yo"
+    },
+    {
+        id : "l2SS0WSMNVg",
+        name : " Independent Women",
+        by : "Destiny's Child"
+    },
+    {
+        id : "-Oil27bpcw4",
+        name : "He Wasn't Man Enough",
+        by : "Toni Braxton"
+    },
+    {
+        id : "cQi1s39PNas",
+        name : "No Scrubs",
+        by : "TLC"
+    },
+    {
+        id : "GbMA7Xh3mi4",
+        name : "Cater 2 U",
+        by : "Destiny's Child"
+    },
 ]
 
 export default initialSongs;
