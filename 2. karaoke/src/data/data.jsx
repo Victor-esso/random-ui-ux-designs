@@ -289,7 +289,7 @@ const initialSongs = [
         by : "NeYo"
     },
     {
-        id : "6spdd0r4kOs",
+        id : "GvhuPG-B5J0",
         name : "So Sick",
         by : " Ne -Yo"
     },
@@ -304,7 +304,7 @@ const initialSongs = [
         by : "Toni Braxton"
     },
     {
-        id : "cQi1s39PNas",
+        id : "bUIvrsvm9z8",
         name : "No Scrubs",
         by : "TLC"
     },
@@ -312,6 +312,11 @@ const initialSongs = [
         id : "GbMA7Xh3mi4",
         name : "Cater 2 U",
         by : "Destiny's Child"
+    },
+    {
+        id : "Zkm9GjwNaIE",
+        name : "E Dey Flow",
+        by : "Moses Bliss x Neeja, Ajay Asika, Festizie, Chizie"
     },
 ]
 
