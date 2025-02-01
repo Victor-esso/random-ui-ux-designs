@@ -318,6 +318,11 @@ const initialSongs = [
         name : "E Dey Flow",
         by : "Moses Bliss x Neeja, Ajay Asika, Festizie, Chizie"
     },
+    {
+        id : "VaI1L-GqPbw",
+        name : "Joy is Coming",
+        by : "Fido"
+    },
 ]
 
 export default initialSongs;
