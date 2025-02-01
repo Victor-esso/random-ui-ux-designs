@@ -209,6 +209,21 @@ const initialSongs = [
         name : " Roar",
         by : "Katy Perry"
     },
+    {
+        id : "HiqiuUA6OxI",
+        name : "  Firework",
+        by : "Katy Perry"
+    },
+    {
+        id : "VM1Iefu5cgk",
+        name : "Life For Rent",
+        by : "Dido"
+    },
+    {
+        id : "GDC2p7S6-jY",
+        name : "Not Afraid",
+        by : "Eminem "
+    },
 ]
 
 export default initialSongs;
